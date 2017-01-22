@@ -3,15 +3,15 @@ var express = require('express');
 
 // Create our app
 var app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT||3000;
 
 app.use(function(req, res, next){
 
 	//Redirect HTTPS request to http (Weather Map Fix ?? )
-	if(req.headers['x-forwarded-proto'] === 'http'){
-		next();
-	}else {
+	if(req.headers['x-forwarded-proto'] === 'https'){
 		res.redirect('http://' + req.hostname + req.url);
+	}else {
+		next();
 	}
 });
 
