@@ -29,17 +29,18 @@ module.exports = {
 			WeatherMessage : 'app/components/WeatherMessage.jsx',
 			About : 'app/components/About.jsx',
 			Examples : 'app/components/Examples.jsx',
-			openWeatherMap: 'app/api/openWeatherMap.jsx'
+			openWeatherMap: 'app/api/openWeatherMap.jsx',
+			ErrorModal: 'app/components/ErrorModal.jsx'
 		},
 		extensions : ['', '.js', '.jsx']
 	},
 
 	module: {
-		loaders : 
+		loaders :
 		[
 			{
 				loader:'babel-loader',
-				query: 
+				query:
 				{
 					presets : ['react','es2015','stage-0']
 				},
